@@ -18,28 +18,28 @@ extern guint8 whitequeen[];
 extern guint8 blackqueen[];
 
 // static members
-Game *Blacksquare::s_game;
+Game*          Blacksquare::s_game;
 RefPtr<Pixbuf> Blacksquare::s_empty;
 RefPtr<Pixbuf> Blacksquare::s_white;
 RefPtr<Pixbuf> Blacksquare::s_black;
 RefPtr<Pixbuf> Blacksquare::s_whitequeen;
 RefPtr<Pixbuf> Blacksquare::s_blackqueen;
 
-Blacksquare *Blacksquare::s_allsquares = 0;
-Label *Blacksquare::s_label;
+Blacksquare* Blacksquare::s_allsquares = 0;
+Label*       Blacksquare::s_label;
 
-Blacksquare::Blacksquare() : ObjectBase("blacksquare")
-{
-	set_flags(NO_WINDOW);
+Blacksquare::Blacksquare()
+  : ObjectBase("blacksquare") {
+    set_flags(NO_WINDOW);
 
-	this->signal_clicked().connect(sigc::mem_fun(*this, &Blacksquare::do_clicked));
+    this->signal_clicked().connect(sigc::mem_fun(*this, &Blacksquare::do_clicked));
 
-	if (!s_empty) // load png-files
-	{
-		s_empty = Pixbuf::create_from_inline(-1, ::empty);
-		s_white = Pixbuf::create_from_inline(-1, white);
-		s_black = Pixbuf::create_from_inline(-1, black);
-		s_whitequeen = Pixbuf::create_from_inline(-1, whitequeen);
-		s_blackqueen = Pixbuf::create_from_inline(-1, blackqueen);
-	}
+    if(!s_empty) // load png-files
+    {
+        s_empty      = Pixbuf::create_from_inline(-1, ::empty);
+        s_white      = Pixbuf::create_from_inline(-1, white);
+        s_black      = Pixbuf::create_from_inline(-1, black);
+        s_whitequeen = Pixbuf::create_from_inline(-1, whitequeen);
+        s_blackqueen = Pixbuf::create_from_inline(-1, blackqueen);
+    }
 }

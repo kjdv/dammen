@@ -2,18 +2,17 @@
  *
  * Copyright (c) 2006, Klaas Jacob de Vries
  *
- * This file is part of dammen and may used, copied, modified and (re)destributed under the terms of the GNU General 
- * Public Licence version 2, as publiced by the Free Software Foundation. See the file COPYRIGHT for details or write to 
+ * This file is part of dammen and may used, copied, modified and (re)destributed under the terms of the GNU General
+ * Public Licence version 2, as publiced by the Free Software Foundation. See the file COPYRIGHT for details or write to
  * the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
  *
  */
 
-#include"blacksquare.ih"
+#include "blacksquare.ih"
 
-void Blacksquare::on_unrealize()
-{
-	d_window.clear();
-	d_gc.clear();
+void Blacksquare::on_unrealize() {
+    d_window.clear();
+    d_gc.clear();
 
-	Widget::on_unrealize();
+    Widget::on_unrealize();
 }
